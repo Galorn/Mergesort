@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
+#include <ctime>
 
 using namespace std;
 
@@ -20,12 +21,13 @@ int main()
     cout << "Hello please enter the number of scores you want to sort with a merge sort" << endl;
     cin >> initialisation;
     cout << "You chose to enter " << initialisation << " scores." << endl ;
-
+    // BOUCLE DE STOCKAGE DANS LE TABLEAU scores
     for(condition = initialisation; condition >0; condition--)
     {
         donnees = rand();
         scores.push_back(donnees);
         cases++ ;
+        // TRACE
         cout << "coucou case " << cases << " il y a " << scores[condition] << endl;
 
     }
