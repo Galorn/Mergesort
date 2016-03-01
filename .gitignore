@@ -45,3 +45,8 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+bin/Debug/Mergesort.exe
+*.cbp
+Mergesort.depend
+*.o
+Mergesort.layout
