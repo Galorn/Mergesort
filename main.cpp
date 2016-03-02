@@ -5,34 +5,38 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
-#include <ctime>
+#include <time.h>
 
 using namespace std;
+
+
 
 int main()
 {
     // INITIALISATION DES VARIABLES
-    int rand(), donnees(0), initialisation(0), condition(0), cases(0);
-    vector<int> scores;
+    int nbScores(0), iBegin(0), iEnd(0);
+    vector<int> scores, scorestosort;
 
     // INITIALISATION DU DEPART DU RANDOM
     srand(time(NULL));
     // INTRODUCTION
     cout << "Hello please enter the number of scores you want to sort with a merge sort" << endl;
-    cin >> initialisation;
-    cout << "You chose to enter " << initialisation << " scores." << endl ;
-    // BOUCLE DE STOCKAGE DANS LE TABLEAU scores
-    for(condition = initialisation; condition >0; condition--)
+    cin >> nbScores;
+    cout << "You chose to enter " << nbScores << " scores." << endl ;
+    // CAS OU SCORES TROP GRAND
+    if (nbScores > 10000)
     {
-        donnees = rand();
-        scores.push_back(donnees);
-        cases++ ;
-        // TRACE
-        cout << "coucou case " << cases << " il y a " << scores[condition] << endl;
-
+        cout << "Deuh t'es trop con ! Ce nombre est un peu grand a mon gout..." << endl;
+        return 0;
     }
-
-
+    // BOUCLE DE STOCKAGE DANS LE TABLEAU scores
+    for(int noCase = 0; noCase < nbScores; noCase++)
+    {
+        scores.push_back(rand());
+        // TRACE
+        cout << "coucou case " << noCase << " il y a " << scores[noCase] << endl;
+    }
 
     return 0;
 }
+
